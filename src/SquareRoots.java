@@ -7,7 +7,7 @@ public class SquareRoots {
         int n;
         while ((n = scan.nextInt()) != 0) {
             System.out.println("Enter a number: ");
-            if ( n < 0) {
+            if (n < 0) {
                 System.out.println("Try again");
                 continue;
             }
