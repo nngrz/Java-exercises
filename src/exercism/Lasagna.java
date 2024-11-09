@@ -1,18 +1,15 @@
 public class Lasagna {
-    public int expectedMinutesInOven(){
+    public int expectedMinutesInOven() {
         return 40;
     }
-
-    public int remainingMinutesInOven(int x){
-        return 40 - x;
+    public int remainingMinutesInOven(int x) {
+        return expectedMinutesInOven() - x;
     }
-
-    public int preparationTimeInMinutes(int x){
-        return 2;
+    public int preparationTimeInMinutes(int x) {
+        return 2 * x;
     }
-
-    public int totalTimeInMinutes(int x, int y){
-        return 2 * x + y;
+    public int totalTimeInMinutes(int x, int y) {
+        return preparationTimeInMinutes(x) + y;
     }
     
     public static void main(String[] args) {
