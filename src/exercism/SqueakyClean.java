@@ -45,7 +45,7 @@ class SqueakyClean {
     }
 
     static String omitNoLetter(String identifier) {
-        identifier = identifier.replaceAll("[^a-zA-Z0-9]", "");
+        identifier = identifier.replaceAll("[^a-zA-Z0-9_]", "");
         return identifier;
     }
 
