@@ -1,17 +1,5 @@
 class SqueakyClean {
     static String whitespaceToUnderscore(String identifier) {
-//        Alternative solution: solve with StringBuilder:
-//        StringBuilder str = new StringBuilder();
-//
-//        for (int i = 0; i < identifier.length(); i++) {
-//            char ch = identifier.charAt(i);
-//            if (Character.isWhitespace(ch)) {
-//                str.append('_');
-//            } else {
-//                str.append(ch);
-//            }
-//        }
-//        return str.toString();
         return identifier.replace(" ", "_");
     }
 
