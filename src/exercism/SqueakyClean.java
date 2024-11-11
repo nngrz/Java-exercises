@@ -1,16 +1,18 @@
 class SqueakyClean {
     static String whitespaceToUnderscore(String identifier) {
-        StringBuilder str = new StringBuilder();
-
-        for (int i = 0; i < identifier.length(); i++) {
-            char ch = identifier.charAt(i);
-            if (Character.isWhitespace(ch)) {
-                str.append('_');
-            } else {
-                str.append(ch);
-            }
-        }
-        return str.toString();
+//        Alternative solution: solve with StringBuilder:
+//        StringBuilder str = new StringBuilder();
+//
+//        for (int i = 0; i < identifier.length(); i++) {
+//            char ch = identifier.charAt(i);
+//            if (Character.isWhitespace(ch)) {
+//                str.append('_');
+//            } else {
+//                str.append(ch);
+//            }
+//        }
+//        return str.toString();
+        return identifier.replace(" ", "_");
     }
 
     static String kebabToCamel(String identifier) {
@@ -24,33 +26,25 @@ class SqueakyClean {
     }
 
     static String leetspeakToText(String identifier) {
-
-        for (int i = 0; i < identifier.length(); i++) {
-            char ch = identifier.charAt(i);
-            if (ch == '4') {
-                identifier = identifier.replace(ch, 'a');
-            } else if (ch == '3') {
-                identifier = identifier.replace(ch, 'e');
-            } else if (ch == '0') {
-                identifier = identifier.replace(ch, 'o');
-            } else if (ch == '1') {
-                identifier = identifier.replace(ch, 'l');
-            } else if (ch == '7') {
-                identifier = identifier.replace(ch, 't');
-            } else {
-                identifier = identifier;
-            }
-        }
-        return identifier;
+        return identifier.replace('4', 'a')
+                        .replace('3', 'e')
+                        .replace('0', 'o')
+                        .replace('1', 'l')
+                        .replace('7', 't');
     }
 
     static String omitNoLetter(String identifier) {
-        identifier = identifier.replaceAll("[^a-zA-Z0-9_]", "");
-        return identifier;
+        return identifier.replaceAll("[^a-zA-Z0-9_]", "");
     }
 
     static String clean(String identifier) {
-        return SqueakyClean.omitNoLetter(SqueakyClean.leetspeakToText(SqueakyClean.kebabToCamel(SqueakyClean.whitespaceToUnderscore(identifier))));
+        return SqueakyClean.omitNoLetter(
+                    SqueakyClean.leetspeakToText(
+                        SqueakyClean.kebabToCamel(
+                            SqueakyClean.whitespaceToUnderscore(identifier)
+                )
+            )
+        );
     }
 
     public static void main(String[] args) {
