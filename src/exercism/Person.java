@@ -14,7 +14,7 @@ class Person {
     public static void main(String[] args) {
         Person pAlbert = new Person("Albert", 32);
         System.out.println(pAlbert.print());
-        Person pJohn = new Person("Haohao", 27);
-        System.out.println(pJohn.print());
+        Person pHaohao = new Person("Haohao", 27);
+        System.out.println(pHaohao.print());
     }
 }
