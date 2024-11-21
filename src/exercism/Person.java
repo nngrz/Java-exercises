@@ -12,7 +12,9 @@ class Person {
     }
 
     public static void main(String[] args) {
-        Person p = new Person("Albert", 32);
-        System.out.println(p.print());
+        Person pAlbert = new Person("Albert", 32);
+        System.out.println(pAlbert.print());
+        Person pJohn = new Person("Haohao", 27);
+        System.out.println(pJohn.print());
     }
 }
