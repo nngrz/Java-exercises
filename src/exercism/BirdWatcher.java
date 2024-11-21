@@ -1,16 +1,14 @@
 import java.util.Arrays;
 
 class BirdWatcher {
-    private final int[] birdsLastWeek;
     private final int[] birdsPerDay;
 
     public BirdWatcher(int[] birdsPerDay) {
-        this.birdsLastWeek = new int[] {0, 2, 5, 3, 7, 8, 4};
         this.birdsPerDay = birdsPerDay.clone();
     }
 
     public int[] getLastWeek() {
-        return birdsLastWeek.clone();
+        return birdsPerDay.clone();
     }
 
     public int getToday() {
@@ -54,8 +52,9 @@ class BirdWatcher {
 
     public static void main(String[] args) {
         // Task 1: Check what the counts were last week
-//        BirdWatcher birdWatcher = new BirdWatcher(new int[] {0, 2, 5, 3, 7, 8, 4});
-//        System.out.println(Arrays.toString(birdWatcher.getLastWeek()));
+        int[] birdsLastWeek = {0, 2, 5, 3, 7, 8, 4};
+        BirdWatcher birdLastWeek = new BirdWatcher(birdsLastWeek);
+        System.out.println(Arrays.toString(birdLastWeek.getLastWeek()));
 
 
         // Task 2: Check how many birds visited today
@@ -74,10 +73,10 @@ class BirdWatcher {
 //        BirdWatcher birdCount = new BirdWatcher(birdsPerDay);
 //        System.out.println(birdCount.hasDayWithoutBirds());
 
-        // Task 5: Calculate the number of visiting birds for the first number of days
-        int[] birdsPerDay = {2, 5, 0, 7, 4, 1};
-        BirdWatcher birdCount = new BirdWatcher(birdsPerDay);
-        System.out.println(birdCount.getCountForFirstDays(10));
+//        // Task 5: Calculate the number of visiting birds for the first number of days
+//        int[] birdsPerDay = {2, 5, 0, 7, 4, 1};
+//        BirdWatcher birdCount = new BirdWatcher(birdsPerDay);
+//        System.out.println(birdCount.getCountForFirstDays(10));
 
         // Task 6: Calculate the number of busy days
 //        int[] birdsPerDay = { 2, 5, 0, 7, 4, 1 };
