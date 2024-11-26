@@ -14,10 +14,7 @@ class AppointmentScheduler {
 
     public boolean isAfternoonAppointment(LocalDateTime appointmentDate) {
         int hour = appointmentDate.getHour();
-        if (hour >= 12 && hour < 18) {
-            return true;
-        }
-        return false;
+        return hour >= 12 && hour < 18;
     }
 
     public String getDescription(LocalDateTime appointmentDate) {
@@ -36,8 +33,8 @@ class AppointmentScheduler {
         AppointmentScheduler scheduler = new AppointmentScheduler();
 //        System.out.println(scheduler.schedule("7/25/2019 13:45:00"));
 //        System.out.println(scheduler.hasPassed(LocalDateTime.of(1999, 12, 31, 9, 0, 0)));
-//        System.out.println(scheduler.isAfternoonAppointment(LocalDateTime.of(2019, 03, 29, 15, 0, 0)));
-        System.out.println(scheduler.getDescription(LocalDateTime.of(2019, 03, 29, 15, 0, 0)));
+        System.out.println(scheduler.isAfternoonAppointment(LocalDateTime.of(2019, 03, 29, 15, 0, 0)));
+//        System.out.println(scheduler.getDescription(LocalDateTime.of(2019, 03, 29, 15, 0, 0)));
 //        System.out.println(scheduler.getAnniversaryDate());
     }
 }
