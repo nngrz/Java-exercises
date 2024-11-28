@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Twofer {
     public String twofer(String name) {
-       if (name == null || name.isEmpty()) {
+        // if you don't know the name, print "you", otherwise print the name
+        if (name == null || name.isEmpty()) {
            name = "you";
        }
        return "One for " + name + ", one for me.";
