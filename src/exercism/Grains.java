@@ -7,8 +7,7 @@ class Grains {
             throw new IllegalArgumentException("square must be between 1 and 64");
         }
         BigInteger base = new BigInteger("2");
-        BigInteger exponent = new BigInteger(String.valueOf(square - 1));
-        return base.pow(exponent.intValue());
+        return base.pow(square - 1);
     }
 
     BigInteger grainsOnBoard() {
