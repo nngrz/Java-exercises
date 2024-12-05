@@ -1,28 +1,28 @@
 import java.util.Scanner;
 
 class ArmstrongNumbers {
-
+    
+    int getNumberOfDigits(int numberToCheck) {
+        int count = 0;
+        do {
+            numberToCheck = numberToCheck / 10;
+            count++;
+        } while (numberToCheck != 0);
+        return count;
+    }
+    
     boolean isArmstrongNumber(int numberToCheck) {
-        int numberOfDigits = 0;
+        int originalNumber = numberToCheck;
+        int numberOfDigits = getNumberOfDigits(numberToCheck);
         int result = 0;
 
-        // Get number of digits
-        int temp = numberToCheck;
         do {
-            temp = temp / 10;
-            numberOfDigits++;
-        } while (temp != 0);
-
-        // Reset the temp to the original user input
-        temp = numberToCheck;
-        // Calculate the sum of digits each raised to the power of the number of digits
-        do {
-            int digit = temp % 10;
+            int digit = numberToCheck % 10;
             result += Math.pow(digit, numberOfDigits);
-            temp = temp / 10;
-        } while (temp != 0);
+            numberToCheck = numberToCheck / 10;
+        } while (numberToCheck != 0);
         
-        return numberToCheck == result;
+        return originalNumber == result;
     }
 
     public static void main(String[] args) {
