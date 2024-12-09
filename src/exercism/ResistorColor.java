@@ -2,7 +2,7 @@ class ResistorColor {
     String[] colorNames = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
 
     int colorCode(String color) {
-        int code = 0;  
+        int code = -1;  
         for (int i = 0; i < colorNames.length; i++) {
             if (colorNames[i].equals(color)) {
                 code = i;
