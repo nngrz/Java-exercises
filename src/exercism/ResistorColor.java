@@ -2,13 +2,14 @@ class ResistorColor {
     String[] colorNames = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
 
     int colorCode(String color) {
-        int code = -1;  
+        int code = -1;
         for (int i = 0; i < colorNames.length; i++) {
             if (colorNames[i].equals(color)) {
                 code = i;
+                return code;
             }
         }
-        return code;
+        throw new IllegalArgumentException("Enter a valid color.");
     }
 
     String[] colors() {
@@ -17,7 +18,7 @@ class ResistorColor {
 
     public static void main (String[] args) {
         ResistorColor rColor = new ResistorColor();
-        System.out.println(rColor.colorCode("red"));
+        System.out.println(rColor.colorCode("eee"));
         for (String color : rColor.colors()){
             System.out.println(color);
         }
