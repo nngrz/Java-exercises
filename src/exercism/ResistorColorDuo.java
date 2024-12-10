@@ -18,11 +18,14 @@ class ResistorColorDuo {
                 secondDigit = i;
             }
         }
-
-        if (firstDigit != -1 && secondDigit != -1) {
-            return firstDigit*10 + secondDigit; 
+        
+        if (firstDigit == -1) {
+            throw new IllegalArgumentException("first color: colors[0] not found in colorList");
+        } else if (secondDigit == -1){
+            throw new IllegalArgumentException("second color: colors[1] not found in colorList");
         }
-        throw new IllegalArgumentException("Enter a valid color.");
+
+        return firstDigit * 10 + secondDigit; 
     }
 
     public static void main(String[] args) {
@@ -31,4 +34,3 @@ class ResistorColorDuo {
         System.out.println(resistorColor.value(colorIn));
     }
 }
-
