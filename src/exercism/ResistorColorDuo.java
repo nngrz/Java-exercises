@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 class ResistorColorDuo {
     int value(String[] colors) {
         if (colors.length < 2) {
@@ -7,22 +9,24 @@ class ResistorColorDuo {
         int firstDigit = -1;
         int secondDigit = -1;
 
-        String[] colorList = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
-        for (int i = 0; i < colorList.length; i++) {
-            if (colorList[i].equals(colors[0])) {
+        String[] COLOR_LIST = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
+        for (int i = 0; i < COLOR_LIST.length; i++) {
+            if (COLOR_LIST[i].equals(colors[0])) {
                 firstDigit = i;
             }
         }
-        for (int i = 0; i < colorList.length; i++) {
-            if (colorList[i].equals(colors[1])) {
+        for (int i = 0; i < COLOR_LIST.length; i++) {
+            if (COLOR_LIST[i].equals(colors[1])) {
                 secondDigit = i;
             }
         }
         
-        if (firstDigit == -1) {
-            throw new IllegalArgumentException("first color: colors[0] not found in colorList");
+        if (firstDigit == -1 && secondDigit == -1) {
+            throw new IllegalArgumentException("First color: " + colors[0] + " and second color: " + colors[1] + " not found in " + Arrays.toString(COLOR_LIST));
+        } else if (firstDigit == -1) {
+            throw new IllegalArgumentException("First color: " + colors[0] + " not found in " + Arrays.toString(COLOR_LIST));
         } else if (secondDigit == -1){
-            throw new IllegalArgumentException("second color: colors[1] not found in colorList");
+            throw new IllegalArgumentException("Second color: " + colors[1] + " not found in " + Arrays.toString(COLOR_LIST));
         }
 
         return firstDigit * 10 + secondDigit; 
@@ -30,7 +34,7 @@ class ResistorColorDuo {
 
     public static void main(String[] args) {
         ResistorColorDuo resistorColor = new ResistorColorDuo();
-        String[] colorIn = {"brown", "green", "violet"};
+        String[] colorIn = {"brown", "geen", "violet"};
         System.out.println(resistorColor.value(colorIn));
     }
 }
