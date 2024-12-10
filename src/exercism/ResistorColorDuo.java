@@ -25,7 +25,7 @@ class ResistorColorDuo {
             throw new IllegalArgumentException("First color: " + colors[0] + " and second color: " + colors[1] + " not found in " + Arrays.toString(COLOR_LIST));
         } else if (firstDigit == -1) {
             throw new IllegalArgumentException("First color: " + colors[0] + " not found in " + Arrays.toString(COLOR_LIST));
-        } else if (secondDigit == -1){
+        } else if (secondDigit == -1) {
             throw new IllegalArgumentException("Second color: " + colors[1] + " not found in " + Arrays.toString(COLOR_LIST));
         }
 
@@ -34,7 +34,9 @@ class ResistorColorDuo {
 
     public static void main(String[] args) {
         ResistorColorDuo resistorColor = new ResistorColorDuo();
-        String[] colorIn = {"brown", "geen", "violet"};
-        System.out.println(resistorColor.value(colorIn));
+        String[] colorInTest1 = {"brown", "green", "violet"};
+        System.out.println(resistorColor.value(colorInTest1));
+        String[] colorInTest2 = {"brown", "geen", "violet"};
+        System.out.println(resistorColor.value(colorInTest2));
     }
 }
