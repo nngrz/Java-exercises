@@ -1,5 +1,17 @@
 import java.util.Arrays;
 
+class Color {
+    private String color;
+
+    public Color(String color) {
+        this.color = color;
+    }
+
+    public String getColor() {
+        return color;
+    }
+}
+
 class ResistorColorTrio {
     // If user input less than 3 colors, throw an exception
     String label(String[] colors) {
@@ -10,24 +22,35 @@ class ResistorColorTrio {
         int firstDigit = -1;
         int secondDigit = -1;
         int numberOfZero = -1;
-        String[] COLOR_LIST = {"black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"};
+        Color[] COLOR_LIST = {
+            new Color("black"),
+            new Color("brown"),
+            new Color("red"),
+            new Color("orange"),
+            new Color("yellow"),
+            new Color("green"),
+            new Color("blue"),
+            new Color("violet"),
+            new Color("grey"),
+            new Color("white")
+        };
         
         // Get first digit
         for (int i = 0; i < COLOR_LIST.length; i++) {
-            if (COLOR_LIST[i].equals(colors[0])) {
+            if (COLOR_LIST[i].getColor().equals(colors[0])) {
                 firstDigit = i;
             }
         }
 
         // Get second digit
         for (int i = 0; i < COLOR_LIST.length; i++) {
-            if (COLOR_LIST[i].equals(colors[1])) {
+            if (COLOR_LIST[i].getColor().equals(colors[1])) {
                 secondDigit = i;
             }
         }
 
         for (int i = 0; i < COLOR_LIST.length; i++) {
-            if (COLOR_LIST[i].equals(colors[2])) {
+            if (COLOR_LIST[i].getColor().equals(colors[2])) {
                 numberOfZero = i;
             }
         }
