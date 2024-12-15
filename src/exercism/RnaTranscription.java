@@ -4,18 +4,18 @@ class RnaTranscription {
         return switch(dnaNucleotide) {
             case 'G' -> 'C';
             case 'C' -> 'G';
-            case 'T' -> 'T';
+            case 'T' -> 'A';
             case 'A' -> 'U';
             default -> throw new IllegalArgumentException("Invalid DNA nucleotide: " + dnaNucleotide);
         };
     }
 
     String transcribe(String dnaStrand) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (char c : dnaStrand.toCharArray()) {
-            result = result + DNAToRNATranslator(c);
+            result.append(DNAToRNATranslator(c));
         }
-        return result;
+        return result.toString();
     }
 
     public static void main(String[] args) {
