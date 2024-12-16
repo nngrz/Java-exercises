@@ -1,6 +1,6 @@
 class StringBuilderTime {
 
-    String printer(int length) {
+    String buildString(int length) {
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < length; i++) {
             result.append("D");
@@ -12,6 +12,6 @@ class StringBuilderTime {
         System.out.println("Enter length: " + args[0]);
 
         StringBuilderTime stringBuilderTime = new StringBuilderTime();
-        System.out.println(stringBuilderTime.printer(Integer.parseInt(args[0])));
+        System.out.println(stringBuilderTime.buildString(Integer.parseInt(args[0])));
     }
 }
