@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 class StringBuilderTime {
 
     String printer(int length) {
