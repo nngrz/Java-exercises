@@ -1,7 +1,6 @@
 class StringTime {
 
     public static void main(String[] args) {
-        System.out.println("Enter length: " + args[0]);
         int length = Integer.parseInt(args[0]);
         String result = "";
 
