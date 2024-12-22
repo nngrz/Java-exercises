@@ -9,7 +9,6 @@ class IntegerToBinary {
             result.append(Integer.toString(bit));
         }
 
-
         System.out.println(result.reverse().toString());
     }
 }
