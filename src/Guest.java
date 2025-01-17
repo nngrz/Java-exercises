@@ -1,12 +1,12 @@
 public class Guest {
-    private String nr;
-    public static int counter;
-    public int positionOfGuest;
+    private String name;
+    private static int counter;
+    private int nr;
 
     public Guest(String name) {
-        nr = name;
+        this.name = name;
         counter++;
-        positionOfGuest = counter;
+        nr = counter;
     }
 
     public static void printTotal() {
@@ -14,7 +14,7 @@ public class Guest {
     }
 
     public void printInfo() {
-        System.out.println(nr + " is the " + positionOfGuest + " invite");
+        System.out.println(name + " is the " + nr + " invite");
     }
 
     public static void main (String[] args) {
