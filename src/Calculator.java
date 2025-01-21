@@ -21,6 +21,8 @@ public class Calculator {
         System.out.println("Enter c: ");
         int c = s.nextInt();
 
+        s.close();
+
         System.out.println("Sum of a and b is: " + add(a, b));
         System.out.println("Sum of a, b and c is: " + add(a, b, c));
     }
