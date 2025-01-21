@@ -6,7 +6,7 @@ public class Counter {
     }
     public static void main(String[] args) {
         for (int i = 0; i < 3; i++){
-            System.out.println("Count: " + increment());
+            System.out.println("Count: " + increment()); // same as  Counter.increment()
         }
     }
 }
