@@ -19,6 +19,6 @@ public class CountCharacters {
         char c = scan.next().charAt(0);
         scan.close();
 
-        System.out.println("Character " + c + " showed " + count(s, c) + " in string " + s);
+        System.out.println("Character " + c + " showed " + CountCharacters.count(s, c) + " in string " + s);
     }
 }
