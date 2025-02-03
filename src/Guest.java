@@ -10,7 +10,7 @@ public class Guest {
         nr = counter;
     }
 
-    public void plusOne() {
+    public void printPlusOne() {
         if (this.plusOne != null) {
             System.out.println(this.name + "'s plus one is " + this.plusOne);
         } else {
@@ -35,8 +35,8 @@ public class Guest {
         Guest guest1 = new Guest("Haohao");
         Guest guest2 = new Guest("Albert");
         guest1.plusOne = guest2;
-        guest1.plusOne();
-        guest2.plusOne();
+        guest1.printPlusOne();
+        guest2.printPlusOne();
         Guest.printTotal(); // should print: `Total guests: 2`
         Guest guest3 = new Guest("Tomek");
         guest2.printInfo(); // should print: ‘Albert is the 2 invite`
