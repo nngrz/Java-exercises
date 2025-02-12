@@ -26,7 +26,7 @@ class D extends B {
 public class M {
     public static void main(String[] args) {
         B[] b = {
-            new B("Rect", 2, 3), // 
+            new B("Rect", 2, 3), 
             new D(5),
             new D(7),
             new B("Rect", 4, 5)
