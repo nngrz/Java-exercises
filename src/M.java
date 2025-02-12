@@ -25,7 +25,14 @@ class D extends B {
 
 public class M {
     public static void main(String[] args) {
-        for (B e : new B[]{new B("Rect", 2, 3), new D(5), new D(7), new B("Rect", 4, 5)})
+        B[] b = {
+            new B("Rect", 2, 3), // 
+            new D(5),
+            new D(7),
+            new B("Rect", 4, 5)
+        };
+
+        for (B e : b)
             System.out.println(e + " ");
     }
 }
