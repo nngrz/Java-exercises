@@ -2,19 +2,13 @@ public class OddRow {
     
     public static int[][] oddRow(int[][] a) {
         // Count the number of rows with odd indices
-        int count = 0;
-        for (int i = 0; i < a.length; i++) {
-            if (i % 2 != 0) {
-                count++;
-            }
-        }
+        int count = (a.length + 1) / 2;
+
         // Create a new array to store rows with odd indices
         int[][] newArr = new int[count][a[0].length];
-        int newRowIndex = 0;
         for (int i = 0; i < a.length; i++) {
             if (i % 2 != 0) {
-                newArr[newRowIndex] = a[i];
-                newRowIndex++;
+               newArr[i/2] = a[i];
             }
         }
         return newArr;
