@@ -13,7 +13,7 @@ class B {
 }
 
 class D extends B {
-    public D (String s) {
+    public D(String s) {
         super(s, 20);
     }
 
